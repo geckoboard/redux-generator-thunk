@@ -149,7 +149,8 @@ const fetchPostsGenerator = reddit => {
 
     let json;
     try {
-      const response = yield fetch(`https://www.reddit.com/r/${reddit}.json`);  json = yield response.json();
+      const response = yield fetch(`https://www.reddit.com/r/${reddit}.json`);
+      json = yield response.json();
     } catch (err) {
       yield requestPostsFailed(reddit, err);
       return;
